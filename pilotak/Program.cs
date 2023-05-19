@@ -9,11 +9,11 @@
 
             foreach (var elem in szoveg.Skip(1))
             {
-                string[] adatok = elem.Split();
+                string[] adatok = elem.Split(";");
                 Versenyzők versenyzo = new Versenyzők(adatok[0], adatok[1], adatok[2], Convert.ToInt32(adatok[3]));
                 lista.Add(versenyzo);
             }
-
+            Console.WriteLine($"3. feladat: {lista.Count()}");
         }
     }
 }
