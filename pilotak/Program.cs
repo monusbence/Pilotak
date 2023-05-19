@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string[] szoveg = File.ReadAllLines("C:\\Users\\Mónus Bence\\source\\repos\\pilotak\\pilotak\\pilotak.csv");
+            List<Versenyzők> lista = new List<Versenyzők>();
+
+            foreach (var elem in szoveg.Skip(1))
+            {
+                string[] adatok = elem.Split();
+                Versenyzők versenyzo = new Versenyzők(adatok[0], adatok[1], adatok[2], Convert.ToInt32(adatok[3]));
+                lista.Add(versenyzo);
+            }
+
         }
     }
 }
